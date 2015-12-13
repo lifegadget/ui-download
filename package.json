@@ -28,7 +28,7 @@
     "testem.json",
     "vendor"
   ],
-  "author": "",
+  "author": "Ken Snyder <ken@ken.net>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
@@ -62,6 +62,7 @@
     "ui-button": "^0.6.6"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://ui-download.firebaseio.com"
   }
 }

@@ -3,12 +3,15 @@
 
 ## Install
 
-    `ember install ui-download`
+````bash
+ember install ui-download
+````
 
 Now you can use the `{{ui-download}}` component in your project. Look at the example for more in-depth usage.
 
 ## Demo
 
+[Demo Site](https://ui-download.firebaseio.com)
 
 ## Repo Contribution
 
