@@ -7,11 +7,11 @@
 ember install ui-download
 ````
 
-Now you can use the `{{ui-download}}` component in your project. Look at the example for more in-depth usage.
+Now you can use the `{{ui-download}}` component in your project. Look at the demo for more in-depth usage.
 
 ## Demo
 
-[Demo Site](https://ui-download.firebaseio.com)
+[Demo Site](https://ui-download.firebaseapp.com)
 
 ## Repo Contribution
 

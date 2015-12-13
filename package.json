@@ -63,6 +63,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "https://ui-download.firebaseio.com"
+    "demoURL": "https://ui-download.firebaseapp.com"
   }
 }
