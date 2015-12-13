@@ -1,0 +1,14 @@
+<span class="uploader">
+  {{yield}}
+  {{#if button}}
+    {{ui-button title=button icon=icon disabled=(not data)}}
+  {{else}}
+    <span class="display-area">
+      {{#if icon}}
+        {{ui-icon icon=icon}}
+      {{/if}}
+      <span class="text">{{text}}</span>
+    </span>
+  {{/if}}
+</span>
+<a class="hidden-link" href="{{url}}" download="{{filename}}"></a>

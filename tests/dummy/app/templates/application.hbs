@@ -1,3 +1,137 @@
-<h2 id="title">Welcome to Ember</h2>
+{{#app-page
+  repo='ui-download'
+  repoOwner='lifegadget'
+  subHeading='downloading files from Ember to the client browser'
+  currentPath=currentPath
+}}
 
-{{outlet}}
+<h3>Overview</h3>
+<row>
+  <description>
+    <p>
+      We're used to putting links in documents and even linking to non-html based content that resides on server (images, pdf's, xml files, etc). The browser when getting a non-html linked resource will try and decide what to do but what if we want to do two things differently:
+      <ol>
+        <li><b>Download</b>. Force browser to download the resource</li>
+        <li><b>Client</b>. The data that makes up the file comes from the client not a server URL</li>
+      </ol>
+    </p>
+  </description>
+</row>
+<br/>
+
+<h3>Examples</h3>
+<row>
+  <widget class='wide'>
+    <div class="row">
+
+    </div>
+    <div class="col-xs-12 downer">
+        <span class='no-grow'>Choose a filename:</span>
+        <span>{{text-input value=filename}}</span>
+    </div>
+    <div class="col-xs-12 downer">
+        <span class='no-grow'>MIME Type:</span>
+        <span>
+          {{radio-buttons
+            buttons='text/xml,text/plain'
+            value=mime
+            changed="mimeTypeChanged"
+          }}
+        </span>
+    </div>
+    <div class='downer'>
+      <h4>Press me:</h4>
+    </div>
+    <div class="col-xs-12">
+      <span>
+        {{ui-download
+          mime=mime
+          data=data
+          filename=filename
+          text='download!'
+        }}
+      </span>
+      <span>
+        {{ui-download
+          mime=mime
+          data=data
+          filename=filename
+          icon='download'
+        }}
+      </span>
+      <span>
+        {{ui-download
+          mime=mime
+          data=data
+          filename=filename
+          button='download!'
+          icon='download'
+        }}
+      </span>
+    </div>
+  </widget>
+  <description>
+    <h4>Inline Use</h4>
+    <p>
+      This component comfortably supports inline as well as block formats. The inline format might look something like this:
+    </p>
+    <span class="col-xs-6">
+<pre><code class="language-handlebars">\{{ui-download
+  mime='{{mime}}'
+  data={{dataTemplate}}
+  filename='{{filename}}'
+  text='download!'
+}}</code></pre>
+    </span>
+    <span class="col-xs-6">
+<pre><code class="language-handlebars">\{{ui-download
+  mime='{{mime}}'
+  data={{dataTemplate}}
+  filename='{{filename}}'
+  icon='download'
+}}</code></pre>
+    </span>
+    <p>
+      If you prefer a download button rather then text replace <prop>text</prop> property with <prop>button</prop>:
+    </p>
+<pre><code class="language-handlebars">\{{ui-download
+  mime='{{mime}}'
+  data=property.name
+  filename='{{filename}}'
+  button='download!'
+  icon='download'
+}}</code></pre>
+
+  </description>
+</row>
+
+<row>
+  <code>
+    {{#ui-download
+      mime=mime
+      data=dataTemplate
+      filename=filename
+    }}
+      <img src="http://ak-hdl.buzzfed.com/static/2014-01/enhanced/webdr07/3/11/anigif_enhanced-buzz-8895-1388765779-12.gif" alt="dancing-bear" height=200px>
+    {{/ui-download}}
+  </code>
+  <description>
+    <h4>Block Form</h4>
+    <p>
+      The block for is easy to understand, it just gives you a blank canvas where if clicked the file will download.
+    </p>
+    <span class="col-xs-12">
+<pre><code class="language-handlebars">\{{#ui-download
+  mime='{{mime}}'
+  data={{dataTemplate}}
+  filename='{{filename}}'
+  text='download!'
+}}
+  &lt;img src="http://ak-hdl.buzzfed.com/static/2014-01/enhanced/webdr07/3/11/anigif_enhanced-buzz-8895-1388765779-12.gif" alt="dancing-bear" height=200px;&gt;
+\{{/ui-download}}
+</code></pre>
+    </span>
+  </description>
+</row>
+
+{{/app-page}}

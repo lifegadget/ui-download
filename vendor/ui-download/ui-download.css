@@ -1,0 +1,34 @@
+.ui-download .link {
+  display: none;
+}
+.ui-download .text {
+  cursor: default;
+}
+
+.ui-download .display-area {
+  margin: 5px;
+  padding: 5px;
+}
+
+.ui-download .display-area .text {
+  color: blue;
+}
+.ui-download .display-area:hover {
+  border-radius: 5px;
+  background-color: rgb(218, 218, 218);
+  transition: background-color 0.5s;
+}
+.ui-download .display-area:active {
+  border: 2px solid darkgrey;
+  margin: 4px;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: hsl(0, 0%, 85%);;
+  transition: background-color 0.25s;
+}
+
+.ui-download:hover i {
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 94%);
+  transition: background-color 0.5s;
+}

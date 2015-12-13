@@ -1,0 +1,21 @@
+widget {
+  display: flex;
+  flex-direction: column;
+}
+
+widget div {
+  display: flex;
+}
+
+widget span {
+  display: flex;
+  flex: 1 1;
+}
+widget span.no-grow {
+  flex: initial;
+  margin-right: 5px;
+}
+
+div.downer {
+  margin-bottom: 2em;
+}

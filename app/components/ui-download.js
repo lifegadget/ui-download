@@ -1,0 +1,1 @@
+export { default } from 'ui-download/components/ui-download';
