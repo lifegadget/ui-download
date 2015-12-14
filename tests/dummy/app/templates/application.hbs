@@ -34,11 +34,23 @@
         <span class='no-grow'>MIME Type:</span>
         <span>
           {{radio-buttons
-            buttons='text/xml,text/plain'
+            size='small'
+            buttons='text/xml,text/plain,safari/download'
             value=mime
             changed="mimeTypeChanged"
           }}
         </span>
+    </div>
+    <div>
+      <note>
+        <b>Note:</b>
+        Annoyingly Safari seems to not follow convention so if you give it a standard MIME type
+        it will try to display it in a browser tab rather than download. The only way you can
+        force the download is to give it a mime type it doesn't know about (hence the <prop>safari/download</prop> option above). Even though we can force Safari to download a file
+        it does <i>not</i> respect the filename we've given it and instead always downloads a file called
+        "Unknown".
+      </note>
+      <br/>
     </div>
     <div class='downer'>
       <h4>Press me:</h4>
