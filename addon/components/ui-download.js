@@ -23,15 +23,14 @@ export default Ember.Component.extend({
   }),
   click(evt) {
     if(evt.target.className !== 'hidden-link') {
-      const {data, filename} = this.getProperties();
+      const {data, filename} = this.getProperties('data','filename');
       if(window.navigator.msSaveOrOpenBlob) {
+        // Microsoft Strategy
         let fileData = [data];
         let blobObject = new Blob(fileData);
-        $('.hidden-link').click(function(){
-          window.navigator.msSaveOrOpenBlob(blobObject, filename);
-        });
+        window.navigator.msSaveOrOpenBlob(blobObject, filename);
       } else {
-        console.log('non-msSave approach');
+        // Non-microsoft startegy
         $('.hidden-link')[0].click();
       }
     }
