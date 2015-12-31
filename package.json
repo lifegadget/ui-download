@@ -1,6 +1,6 @@
 {
   "name": "ui-download",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Download data to the client browser.",
   "directories": {
     "doc": "doc",
@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/lifegadget/ui-download",
   "engines": {
     "node": ">= 0.10.0"
   },

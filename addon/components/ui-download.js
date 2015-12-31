@@ -8,12 +8,14 @@ import layout from '../templates/components/ui-download';
 
 export default Ember.Component.extend({
   layout: layout,
-  classNameBindings: ['_file'],
+  classNameBindings: ['_file','hasBeenDownloaded:downloaded:not-downloaded'],
   classNames: ['ui-download'],
   data: null,
+  id: null, // this property isn't used but it is often handy for container to put an ID reference here
   _data: computed('data', function() {
     return this.get('data') ? 'data-ready' : null;
   }),
+  size: 'normal',
   mime: 'text/plain',
   charset: 'utf-8',
   url: computed('mime', 'data', function() {
@@ -21,8 +23,10 @@ export default Ember.Component.extend({
     data = charset === 'utf-8' || mime.slice(0, 4) === 'text' ? encodeURIComponent(data) : data;
     return `data:${mime};charset=${charset},${data}`;
   }),
+  hasBeenDownloaded: false,
   click(evt) {
     if(evt.target.className !== 'hidden-link') {
+      this.set('hasBeenDownloaded', true);
       const {data, filename} = this.getProperties('data','filename');
       if(window.navigator.msSaveOrOpenBlob) {
         // Microsoft Strategy
@@ -33,6 +37,11 @@ export default Ember.Component.extend({
         // Non-microsoft startegy
         $('.hidden-link')[0].click();
       }
+      this.sendAction('onDownload', {
+        event: evt,
+        object: this,
+        id: this.get('id')
+      });
     }
   }
 });

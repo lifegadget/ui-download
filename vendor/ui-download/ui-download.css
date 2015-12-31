@@ -2,7 +2,7 @@
   display: none;
 }
 .ui-download .text {
-  cursor: default;
+  cursor: pointer;
 }
 
 .ui-download .display-area {
@@ -10,9 +10,6 @@
   padding: 5px;
 }
 
-.ui-download .display-area .text {
-  color: blue;
-}
 .ui-download .display-area:hover {
   border-radius: 5px;
   background-color: rgb(218, 218, 218);
@@ -27,8 +24,7 @@
   transition: background-color 0.25s;
 }
 
-.ui-download:hover i {
-  border-radius: 50%;
-  background-color: hsl(0, 0%, 94%);
-  transition: background-color 0.5s;
+/* Has been downloaded */
+.ui-button.downloaded .text {
+  color: darkgrey;
 }
