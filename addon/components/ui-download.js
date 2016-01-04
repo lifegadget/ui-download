@@ -25,7 +25,7 @@ export default Ember.Component.extend({
   }),
   hasBeenDownloaded: false,
   click(evt) {
-    if($('.hidden-link').length > 0) {
+    if(evt.target.className !== 'hidden-link') {
       this.set('hasBeenDownloaded', true);
       const {data, filename, elementId} = this.getProperties('data','filename','elementId');
       if(window.navigator.msSaveOrOpenBlob) {

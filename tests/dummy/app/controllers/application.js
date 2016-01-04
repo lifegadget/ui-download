@@ -31,6 +31,9 @@ export default Ember.Controller.extend({
         this.set('filename', 'foobar.xml');
         this.set('data', xmlData);
       }
+    },
+    onDownload(evt) {
+      console.log(evt);
     }
   }
 });
