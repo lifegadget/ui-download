@@ -25,9 +25,9 @@ export default Ember.Component.extend({
   }),
   hasBeenDownloaded: false,
   click(evt) {
-    if(evt.target.className !== 'hidden-link') {
+    if($('.hidden-link').length > 0) {
       this.set('hasBeenDownloaded', true);
-      const {data, filename} = this.getProperties('data','filename');
+      const {data, filename, elementId} = this.getProperties('data','filename','elementId');
       if(window.navigator.msSaveOrOpenBlob) {
         // Microsoft Strategy
         let fileData = [data];
@@ -35,13 +35,20 @@ export default Ember.Component.extend({
         window.navigator.msSaveOrOpenBlob(blobObject, filename);
       } else {
         // Non-microsoft startegy
-        $('.hidden-link')[0].click();
+        $(`#${elementId} .hidden-link`)[0].click();
       }
-      this.sendAction('onDownload', {
-        event: evt,
-        object: this,
-        id: this.get('id')
-      });
+
+      if(typeOf(this.attrs.onDownload) === 'function') {
+        this.attrs.onClick({
+          event: evt,
+          object: this
+        });
+      } else {
+        this.sendAction('onDownload', {
+          event: evt,
+          object: this
+        });
+      }
     }
   }
 });
