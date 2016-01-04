@@ -39,7 +39,7 @@ export default Ember.Component.extend({
       }
 
       if(typeOf(this.attrs.onDownload) === 'function') {
-        this.attrs.onClick({
+        this.attrs.onDownload({
           event: evt,
           object: this
         });
