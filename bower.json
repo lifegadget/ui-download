@@ -14,7 +14,8 @@
     "loader.js": "ember-cli/loader.js#3.4.0",
     "babel-polyfill": "~0.0.1",
     "filesaver": "*",
-    "fontawesome": "fontawesome#~4.5.0"
+    "fontawesome": "fontawesome#~4.5.0",
+    "font-awesome": "fontawesome#~4.5.0"
   },
   "devDependencies": {
     "animate.css": "3.4.0",
