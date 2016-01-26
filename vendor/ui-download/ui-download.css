@@ -1,3 +1,7 @@
+.ui-download {
+  display: inline;
+}
+
 .ui-download .link {
   display: none;
 }
