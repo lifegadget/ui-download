@@ -1,6 +1,6 @@
 {
   "name": "ui-download",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Download data to the client browser.",
   "directories": {
     "doc": "doc",
