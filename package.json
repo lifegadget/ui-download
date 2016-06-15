@@ -1,6 +1,6 @@
 {
   "name": "ui-download",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Download data to the client browser.",
   "directories": {
     "doc": "doc",
@@ -52,6 +52,7 @@
     "ember-truth-helpers": "1.2.0",
     "ember-try": "~0.0.8",
     "ui-icon": "0.5.5",
+    "ui-button": "^0.6.6",
     "ui-input": "0.5.1"
   },
   "keywords": [
@@ -59,8 +60,7 @@
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.5",
-    "ember-cli-htmlbars": "^1.0.1",
-    "ui-button": "^0.6.6"
+    "ember-cli-htmlbars": "^1.0.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
