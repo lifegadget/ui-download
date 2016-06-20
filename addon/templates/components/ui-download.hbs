@@ -1,13 +1,13 @@
 <span class="uploader">
-  {{yield}}
+
   {{#if button}}
-    {{ui-button title=button icon=icon disabled=(not data) size=size}}
+    {{ui-button title=button icon=icon disabled=(not data) size=size mood=mood}}
   {{else}}
     <span class="display-area">
       {{#if icon}}
         {{ui-icon icon=icon}}
       {{/if}}
-      <span class="text">{{text}}</span>
+      <span class="text">{{text}}{{yield}}</span>
     </span>
   {{/if}}
 </span>
