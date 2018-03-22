@@ -1,6 +1,6 @@
 {
   "name": "ui-download",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "Download data to the client browser.",
   "directories": {
     "doc": "doc",
@@ -55,9 +55,7 @@
     "ui-button": "^0.6.6",
     "ui-input": "0.5.1"
   },
-  "keywords": [
-    "ember-addon"
-  ],
+  "keywords": ["ember-addon"],
   "dependencies": {
     "ember-cli-babel": "^5.1.5",
     "ember-cli-htmlbars": "^1.0.1"
